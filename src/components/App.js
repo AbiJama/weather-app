@@ -1,10 +1,14 @@
 import React from "react";
 import "../styles/App.css";
+import LocationDetails from "./LocationDetails";
+import ForecastSummaries from "./ForecastSummaries";
 
-function App() {
+function App(props) {
+  const { forecasts, location } = props;
   return (
     <div className="App">
-      <h1>Weather App</h1>
+      <LocationDetails city={location.city} country={location.country} />
+      <ForecastSummaries forecasts={forecasts} />
     </div>
   );
 }
